@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "example/pages/home/home",
+    "example/index",
+    "example/pages/code-detail/code-detail",
+    "example/pages/create/create",
+    "example/pages/list/list",
+    "example/pages/beautify/beautify",
+    "example/pages/tutorial/tutorial"
+  ],
+  "tabBar": {
+    "color":"#CECECE",
+    "selectedColor":"#3A3A3A",
+    "list": [
+      {        
+        "pagePath": "example/pages/home/home",
+        "iconPath":"example/asset/image/user-icon-1.png",
+        "selectedIconPath":"example/asset/image/user-icon-1-1.png",
+        "text": "用户中心"
+      },
+      {
+        "pagePath": "example/pages/create/create",
+        "iconPath": "example/asset/image/create-icon-1.png",
+        "selectedIconPath": "example/asset/image/create-icon-1-1.png",
+        "text": "创建活码"
+      },
+      {
+        "pagePath": "example/pages/list/list",
+        "iconPath": "example/asset/image/list-icon-1.png",
+        "selectedIconPath": "example/asset/image/list-icon-1-1.png",
+        "text": "活码列表"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "活码",
+    "navigationBarBackgroundColor": "#EDEDED",
+    "backgroundColor": "#EDEDED"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "style": "v2",
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

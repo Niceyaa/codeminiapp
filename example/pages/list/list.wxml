@@ -1,0 +1,32 @@
+<view class="code_list">
+  <h3 class="title">活码列表</h3>
+  <view class="list_box">
+    <view class="item" wx:for="{{list}}" wx:key="{{item.id}}">
+      <view class="item_header">
+        <text>剩余扫码次数:{{item.see_limit_num}}</text>
+        <image class="del" bindtap="delDialog" data-item="{{item}}" src="/example/asset/image/del.png"></image>
+      </view>
+      <view class="item_body">
+        <view class="img_box">
+          <image src="{{item.oss_pic}}" />
+          <view class="pic_id">图片ID:{{item.id}}</view>
+        </view>
+        <view class="txt_box">
+          <view class="txt_item {{item.domain_status ? '' : 'anomaly'}}">状态：{{item.domain_status == 1 ? '正常' : '被封'}}</view>
+          <view class="txt_item">标题：{{item.name}}</view>
+          <view class="txt_item">扫码：{{item.scan_number}}次</view>
+          <view class="txt_item">图片：{{item.img_count}}张</view>
+          <view class="txt_item">地区：{{item.province}}-{{item.city}}</view>
+          <button class="edit" plain="true" bindtap="updateCode" data-item="{{item}}">修改参数</button>
+        </view>
+      </view>
+      <view class="btn_group">
+        <!-- 长按发送给微信，点击保存相册 -->
+        <button class="update" bindtap="creatNewCode" data-item="{{item}}">更换</button>
+        <button class="share" bindtap="openDialog" data-item="{{item}}">分享</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+

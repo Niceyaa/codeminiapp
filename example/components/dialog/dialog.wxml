@@ -1,0 +1,11 @@
+<view class="dialog">
+  <view class="main">
+    <view class="title">{{title}}</view>
+    <view class="content">
+      <slot></slot>
+    </view>
+    <view class="btn_group">
+      <button wx:for="{{buttons}}" bindtap="btnFun" data-item="{{item}}">{{item.txt}}</button>
+    </view>
+  </view>
+</view>

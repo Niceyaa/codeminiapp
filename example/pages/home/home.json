@@ -1,0 +1,8 @@
+{
+  "usingComponents":{
+    "w-dialog": "/example/components/dialog/dialog",
+    "w-footer": "/example/components/footer/footer"
+  },
+  "navigationBarBackgroundColor":"#293B52",
+  "navigationBarTextStyle":"white"
+}

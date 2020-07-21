@@ -1,0 +1,91 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+
+<view class="page">
+  <view class="user_center">
+    <view class="no-login-container" wx:if="{{isLogin==0}}">
+      <view class="noLoginH">需要授权才能使用</view>
+      <view>
+        <text>允许微信授权后即可记录你创作的二维码</text>
+      </view>
+      <view class="agree-box">
+        <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权用户信息
+        </button>
+      </view>
+
+      <view class="info">
+        <text style="font-size:24rpx;">授权即表示你已经阅读并同意</text>
+        <text bindtap="agrOpen" style="font-size:24rpx;color:rgba(98,165,249,1);">《活码网小程序服务协议》</text>
+      </view>
+    </view>
+
+    <view wx:if="{{isLogin==1}}">
+      <view class="user_msg_box">
+        <view class="main">
+          <image src="{{userInfo.headimgurl}}"></image>
+          <view class="content">
+            <view class="name">{{userInfo.nickname}}【ID:{{userInfo.id}}】</view>
+            <view class="count">您已创建活码数量:
+              <view class="active_num">
+                {{userInfo.codeCount}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="nav_box">
+      <view bindtap="switchTab" data-url="/example/pages/create/create">
+          <image src="/example/asset/image/icon-4.png"></image>
+          <text>创建活码</text>
+        </view>
+        <view bindtap="switchTab" data-url="/example/pages/list/list">
+          <image src="/example/asset/image/icon-5.png"></image>
+          <text>活码列表</text>
+        </view>
+        
+        <view bindtap="go" data-url="/example/pages/beautify/beautify">
+          <image src="/example/asset/image/icon-3.png"></image>
+          <text>美化图片</text>
+        </view>
+        <view bindtap="go" data-url="/example/pages/tutorial/tutorial">
+          <image src="/example/asset/image/icon-1.png"></image>
+          <text>活码教程</text>
+        </view>
+        <view>
+          <image bindtap="vipCustom" src="/example/asset/image/icon-2.png"></image>
+          <text>vip定制</text>
+        </view>
+        <view class="share">
+          <button open-type="share">
+            <image src="/example/asset/image/icon-6.png"></image>
+            <text>分享好友</text>
+          </button>
+        </view>
+      </view>
+
+      <swiper class="banner_box" indicator-dots="true" autoplay="true">
+        <block wx:for="{{bannerList}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item.img_url}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="user_agr" bindtap="agrOpen">用户协议</view>
+    </view>
+    <w-dialog title="活码网服务协议" wx:if="{{argObj.show}}" buttons="{{argObj.btn}}" bindButtonFun="agrCallback">
+      <text style="font-size:24rpx;">在使用活码网前，请您务必仔细阅读并透彻理解本协议。您可以选择不使用活码网，但如果您使用活码网服务，您的使用行为将被视为对本协议全部内容的认可。
+活码网上关于用户或其发布的相关信息（包括但不仅限于用户名称、公司名称、联系人及联络信息、相关图片等）均是由用户自行提供， 任何单位或个人保证在活码网上发布的内容完全符合中国有关法律、法规、行政规章等的规定，不得建立涉嫌传销、赌博、色情、非法集资以及其他任何违反法律法规的内容。不得发布任何侵犯公民隐私权、违法社会公用道德规范的内容，如有违反，及因该类事件所带来的任何损害，活码网有权立即终止该用户帐号，并终止该用户继续使用活码网。用户依法应对其提供的任何信息，及因该类事件所造成的损害后果承担全部责任。
+任何单位或个人必须对发布的内容的合法性、准确性、真实性、实用性和安全性（包括下载第三方网页中内容是否会感染病毒）等负全部责任。活码网仅为用户发布的内容提供存储空间，活码网并不能保证随时监视此网，但保留进行随时监视的权利。
+因不可抗力因素（网络状况、通讯线路、第三方网站或管理部门的要求等）造成服务中断，导致用户不能正常使用活码网，活码网不承担任何法律责任。
+任何单位或个人认为活码网网页内容（包括但不限于用户发布的信息）可能涉嫌侵犯其合法权益，应该及时向活码网提出书面权利通知，并提供身份证明、权属证明、具体链接及详细侵权情况证明。活码网在收到上述文件后，有权删除该活码，终止继续使用，并保留移交司法机关处理的权利。
+活码网尊重并保护所有使用活码网服务用户的个人隐私权。活码网将通过向其它服务器备份、对用户数据进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施，但同时也请您注意在信息网络上不存在绝对完善的安全措施。如您发现自己的信息泄密，请您及时联系活码网。</text>
+    </w-dialog>
+  </view>
+
+  <view class="vip_box" wx:if="{{vipObj.show}}" bindtap="closeVipBox">
+    <view class="vip_body">
+      <image show-menu-by-longpress="true" catch:tap src="{{vipObj.src}}"></image>
+      <text>{{vipObj.txt}}</text>
+    </view>
+  </view>
+</view>

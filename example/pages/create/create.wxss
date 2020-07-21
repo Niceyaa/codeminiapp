@@ -1,0 +1,158 @@
+page {
+  background: #fff;
+}
+
+
+
+/*白色样式（false的样式）*/
+
+.wx-switch-input::before {
+  background: #c6c6c6 !important;
+}
+
+.header {
+  background: #293b52;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.main {
+  padding: 30rpx 60rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 61rpx;
+  color: #3a3a3a;
+  font-weight: bold;
+}
+
+.item {
+  margin-bottom: 70rpx;
+}
+
+.item .label {
+  color: #1c3658;
+  font-size: 35rpx;
+}
+
+.item .label .sub {
+  color: #9c9c9c;
+  font-size: 22rpx;
+  float: right;
+  margin-top: 15rpx;
+}
+
+.item input {
+  width: 100%;
+  border: 1px solid #3a3a3a;
+  height: 84rpx;
+  line-height: 84rpx;
+  padding-left: 34rpx;
+  border-radius: 7rpx;
+  margin-top: 22rpx;
+  box-sizing: border-box;
+}
+
+.item .sub_title {
+  color: #3a3a3a;
+  font-size: 30rpx;
+}
+
+.item .list_box {
+  margin-top: 40rpx;
+}
+
+.item .list_box .list_item {
+  width: 184rpx;
+  height: 184rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 7rpx;
+  border: 1px solid #aaa;
+  margin-right: 35rpx;
+  margin-bottom: 25rpx;
+}
+
+.item .list_box .add_img {
+  border: 1px dashed #aaa;
+  background: #eaeaea;
+  color: #fff;
+  font-size: 150rpx;
+  text-align: center;
+  line-height: 180rpx;
+  vertical-align: top;
+}
+
+.item .list_box .list_item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.show_num_box .check {
+  float: right;
+  margin-right: 45rpx;
+}
+
+.count_limit_box .show_type {
+  display: flex;
+  margin-top: 30rpx;
+  align-items: center;
+}
+
+.count_limit_box .sub_title {
+  color: rgba(28, 54, 88, 1);
+  flex: 1;
+}
+
+.count_limit_box .tab_box {
+  width: 275rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  display: flex;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(236, 236, 236, 1);
+  border-radius: 20rpx;
+  overflow: hidden;
+  align-items: center;
+}
+
+.count_limit_box .tab_box view {
+  flex: 1;
+  font-size: 24rpx;
+  height: 100%;
+  color: rgba(156, 156, 156, 1);
+  text-align: center;
+}
+
+.count_limit_box .tab_box view.active {
+  background: rgba(65, 204, 88, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.count_limit_box .info {
+  margin-right: 45rpx;
+  color: rgba(18, 107, 229, 1);
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}
+
+.select_city_box .check {
+  float: right;
+  margin-right: 45rpx;
+}
+.select_city_box .city_limit_box{
+  margin-top: 50rpx;  
+}
+.select_city_box .city_limit_box .now_city{
+  font-size: 30rpx;
+  color:#222222;
+}
+.select_city_box .info{
+  font-size: 21rpx;
+  color: #126BE5;
+  margin-top: 30rpx;
+}

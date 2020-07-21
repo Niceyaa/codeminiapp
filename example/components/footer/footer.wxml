@@ -1,0 +1,17 @@
+<view class="footer">
+  <view class="user_center" bindtap="tab" data-index="1">
+    <image wx:if="{{index == 1}}" src="/example/asset/image/home-icon1.png"></image>
+    <image wx:else src="/example/asset/image/home-icon1-1.png"></image>
+    <text class="{{index == 1 ? 'active' : ''}}">用户中心</text>
+  </view>
+  <view class="create_code" bindtap="tab" data-index="2">
+    <image wx:if="{{index == 2}}" src="/example/asset/image/home-icon2.png"></image>
+    <image wx:else src="/example/asset/image/home-icon2-1.png"></image>
+    <text class="{{index == 2 ? 'active' : ''}}">创建活码</text>
+  </view>
+  <view class="code_list" bindtap="tab" data-index="3">
+    <image wx:if="{{index == 3}}" src="/example/asset/image/home-icon3.png"></image>
+    <image wx:else src="/example/asset/image/home-icon3-1.png"></image>
+    <text class="{{index == 3 ? 'active' : ''}}">活码列表</text>
+  </view>
+</view>

@@ -1,0 +1,84 @@
+<view class="create_code">
+  <view class="header">活码系统</view>
+  <view class="main">
+    <view class="title">创建活码</view>
+    <view class="item title_box">
+      <view class="label">活码标题</view>
+      <input placeholder="请输入活码标题" type="text" bindinput="getName" value="{{title}}" />
+    </view>
+    <view class="item upload_box">
+      <view class="label">
+        <text>图片上传</text>
+        <text class="sub">最多6张</text>
+      </view>
+      <view class="sub_title">上传二维码</view>
+      <view class="list_box">
+        <image class="list_item" wx:for="{{imgListObj.list}}" src="{{item}}"></image>
+        <view class="list_item add_img" wx:if="{{imgListObj.list.length < 6}}" bindtap="chooseImg" data-count="{{imgListObj.count}}">+</view>
+      </view>
+    </view>
+    <view class="item show_num_box">
+      <view class="label">
+        <text>图片展示次数</text>
+        <switch class="check" checked="{{countLimitObj.show}}" bindchange="changeCountLimit" />
+      </view>
+      <view class="count_limit_box" wx:if="{{countLimitObj.show}}">
+        <input value="{{countLimitObj.count}}" type="number" bindinput="getCountLimitValue" />
+        <view class="show_type">
+          <view class="sub_title">图片展示方式:</view>
+          <view class="tab_box">
+            <view bindtap="changeShowType" class="{{countLimitObj.showType==2?'active':''}}" data-id="{{2}}">单一展示</view>
+            <view bindtap="changeShowType" class="{{countLimitObj.showType==1?'active':''}}" data-id="{{1}}">循环展示</view>
+          </view>
+        </view>
+        <view class="info" wx:if="{{countLimitObj.showType==2}}">
+          单一展示：当图片扫码次数到达设定值后，展示下一张图片。
+        </view>
+        <view class="info" wx:if="{{countLimitObj.showType==1}}">
+          循环展示：该图片被扫描后，下次进入展示下一张图片，一直循环至次数耗尽。
+        </view>
+      </view>
+    </view>
+    <view class="item select_city_box">
+      <view class="label">
+        <text>指定地区</text>
+        <switch class="check" checked="{{cityLimitObj.show}}" bindchange="changeCityLimit" />
+      </view>
+      <view class="city_limit_box" wx:if="{{cityLimitObj.show}}">
+        <picker mode="region" bindchange="bindCityChange" value="{{cityLimitObj.region}}" custom-item="全部">
+          <view class="now_city">
+            当前选择：{{cityLimitObj.region[0]}}-{{cityLimitObj.region[1]}}-{{cityLimitObj.region[2]}} (点击更改)
+          </view>
+        </picker>        
+      </view>
+      <view class="info">开启指定地区可见，只有所选地区可以访问</view>
+    </view>
+    <view class="item">
+      <button class="create" size="mini" wx:if="{{!isUpdate}}" type="primary" focus="focusFlag" bindtap="createCode">提交保存</button>
+    </view>
+    <view class="item">
+       <view>备注：</view>
+       <view wx:for="{{uploadRule}}">{{ item }}</view>
+    </view>
+  </view>
+
+  
+
+
+
+
+
+
+
+
+  <!-- <button class="create" size="mini" wx:if="{{!isUpdate}}" type="primary" focus="focusFlag" bindtap="createCode">创建</button>
+  <button class="create" size="mini" wx:if="{{isUpdate}}" type="primary" bindtap="updateCodeBtn">修改</button> -->
+
+  <!-- <view style="padding-bottom:100rpx;margin-right:30rpx;">
+    <view wx:key wx:for="{{userInfo.uploadRule}}" class="remarks">
+      {{item}}
+    </view>
+  </view> -->
+
+
+</view>

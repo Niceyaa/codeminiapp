@@ -1,0 +1,37 @@
+/*!
+ * WeUI v2.0.1 (https://github.com/weui/weui-wxss)
+ * Copyright 2019 Tencent, Inc.
+ * Licensed under the MIT license
+ */
+.page {
+  text-align: center;
+}
+
+.logo {
+ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAABhUlEQVR4Xu3UMUoDARRF0fczoC5AK12FpDEiJp0gKARCsgJdhIUIugiXIBILUbSzUouYrEI7FxCFyRdttIjCs5zclGGm+JczLyRp7aGzvDBXHEq5royFz/9m7hc5luJ+/F4ePTbOX2Jj1FkqymIUoZWZizHl4Ew9l0W5Gs1B9zgiDojyXSAzT6L51LsKaZswP8JI19Ec9m4itUWYH2FCt4SZtjOEmf6dJGEIY00oYn7JRRjCWF+SEIMYxHgFEOP1YmMQgxivAGK8XmwMYhDjFUCM14uNQQxivAKI8XqxMYhBjFcAMV4vNgYxiPEKIMbrxcYgBjFeAcR4vdgYxCDGK4AYrxcbgxjEeAUQ4/ViYxCDGK8AYrxebAxiEOMVQIzXi41BDGK8AojxerExiEGMVwAxXi82BjH/ENMadPuKaHuvVvzpzIvYHPT2aqHTip9qnTdJ7UcnO8XrsNaXYtd6u6oPpy4X62U7vu5LReupu6OaGpmar+rNf90VoTdN9HBXP7tUKD8A6nV5FcvB6KoAAAAASUVORK5CYII=') no-repeat;
+ width: 140rpx;
+ height: 140rpx;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin:0 auto;
+ margin-top: 200rpx;
+ margin-bottom: 120rpx;
+}
+.index-icon {
+  height: 88rpx;
+  width: 108rpx;
+}
+
+.weui-flex{-webkit-box-align:center;-webkit-align-items:center;align-items:center}.weui-cells{margin-top:0;opacity:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:.3s;transition:.3s}.weui-cells:after,.weui-cells:before{display:none}.weui-cells_show{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}.weui-cell:before{right:15px}.kind-list__item{margin:10px 0;background-color:#fff;border-radius:2px;overflow:hidden}.kind-list__item:first-child{margin-top:0}.kind-list__img{width:30px;height:30px}.kind-list__item-hd{padding:20px;-webkit-transition:opacity .3s;transition:opacity .3s}.kind-list__item-hd_show{opacity:.4}.kind-list__item-bd{height:0;overflow:hidden}.kind-list__item-bd_show{height:auto}
+
+.radia-box {
+  height: 30rpx;
+  font-size: 30rpx;
+}
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+  border: 4rpx solid #999;
+  border-radius: 100%;
+}
